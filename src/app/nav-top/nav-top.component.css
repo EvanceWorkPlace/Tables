@@ -5,12 +5,12 @@ body {margin:0;}
   background-color: #000000;
 }
 
-.topnav a {
-  float: left;
+.topnav a {  float: left;
+
   display: block;
   color: rgb(255, 255, 255);
   text-align: center;
-  padding: 14px 16px;
+  padding: 24px 22px;
   text-decoration: none;
   font-size: 17px;
   border-bottom: 3px solid transparent;
@@ -22,4 +22,12 @@ body {margin:0;}
 
 .topnav a.active {
   border-bottom: 3px solid rgb(239, 255, 9);
+}
+img{
+  float: right;
+  border: 1px solid rgb(30, 189, 210);
+  align-content: end;
+  max-width: 100px;
+  border-radius: 20px;
+  margin-trim: 100px;
 }

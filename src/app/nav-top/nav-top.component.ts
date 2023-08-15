@@ -7,6 +7,11 @@ import { Person } from '../persons';
   styleUrls: ['./nav-top.component.css']
 })
 export class NavTopComponent{
-  // constructor(private personService:PersonService){}
+  people: any[] = [];
+  constructor(private personService:PersonService){}
+ 
+ ngOnInit(): void {
+  this.people = this.personService.getPerson();
+ }
   
 }
