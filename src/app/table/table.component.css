@@ -9,9 +9,9 @@
    table {
     width: 100%;
     border-collapse: collapse;
-    background-color:#1173a1;
+    background-color:#b4210d;
     color: #000000;
-    border: 1px solid#1173a1;
+    border: 1px solid#a19f11;
   }
   
   th, td {
@@ -25,7 +25,7 @@
   }
   
   tr:nth-child(even) {
-    background-color:  #53eaf5;
+    background-color:  #f5ea53;
   }
   
   tr:hover {
