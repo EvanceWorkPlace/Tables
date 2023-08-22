@@ -1,28 +1,26 @@
+<div  class="details-container"  *ngIf="person"> 
 
-
-<base href="/">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   <!-- <div> {{person.id+"\t"+person.name+"\t"+person.surname+"\t"+person.Email+"\t"+person.Age}}</div> -->
-<!-- <div class="container">
-    <p>{{people[0].name+"  |   "+people[0].surname+"   |  "+people[0].Email+"   |    "+people[0].Age | json}} </p>
-</div> -->
-   <table>
-    <thead>
-      <tr>
-        <th>Id:</th>
-        <th>Name:</th>
-        <th>Surname:</th>
-        <th>Email:</th>
-        <th>Age:</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let person of people">
-        <td>{{ person.id }} </td>
-        <td>{{ person.name }}</td>
-        <td>{{ person.surname }}</td>
-        <td>{{ person.Email }}</td>
-        <td>{{ person.Age }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <h2>{{person.name+"\t"+person.surname+"\t"+person.Email+"\t|"+person.Age}}</h2>
+  <div>
+    <label for="person-name">Name:  <i class="fas fa-bell"></i></label>
+    <input id="person-name" [(ngModel)]="person.name" placeholder="name"/>
+  </div>
+  <br>
+  <div>
+    <label for="person-name">Surname:  <i class="fas fa-universal-access"></i></label>
+    <input id="person-name" [(ngModel)]="person.surname" placeholder="surname"/>
+  </div>
+  <br>
+  <div>
+    <label for="person-name">Email:  <i class="fas fa-tty"></i> </label>
+    <input id="person-name" [(ngModel)]="person.Email" placeholder="Email"/>
+  </div>
+  <br>
+  <div>
+    <label for="person-name">Age:  <i class="fas fa-eject"></i></label>
+    <input id="person-name" [(ngModel)]="person.Age" placeholder="Age"/>
+    <br><button style="background-color: rgb(0, 0, 0); font-weight: 500px;color:rgb(255, 252, 252)" type="button" (click)="goBack()">Savek</button>
+    <!-- <br><button style="background-color: rgb(0, 0, 0); font-weight: 500px;color:rgb(255, 252, 252)" type="button" (click)="cancelEdit()">Edit</button> -->
+    <!-- <br><button style="background-color: rgb(0, 0, 0); font-weight: 500px;color:rgb(255, 252, 252)" type="button" (click)="updatePerson()">Update</button> -->
+  </div>
+</div>

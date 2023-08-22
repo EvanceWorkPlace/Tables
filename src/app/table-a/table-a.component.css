@@ -1,0 +1,127 @@
+
+  input{
+    width: 70px;
+  }
+  .add-button{
+    align-content: center;
+    background-color: aqua;
+  } 
+  .mat-button{
+    background-color: #000000;
+  }
+   .mat-elevation-z8 {
+    
+   
+    background: rgb(0, 73, 36);
+   }
+  .demo-table .mat-elevation-z8 {
+   
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color: #be0404;
+  }
+   
+  
+  .mat-column-id{
+    background-color: black;
+    color: #0011ff;
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .mat-column-name{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(255, 0, 0);
+    color: #000000;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+  }
+  .mat-column-surname{
+    background-color:  rgb(253, 32, 32);
+    color: #000000;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .mat-column-Email{
+    background-color:rgb(252, 61, 61);
+    
+    color: #000000;
+   
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+  }
+  .mat-column-Age{
+    background-color: rgb(255, 88, 88);
+    color: #000000;
+    
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+  }
+  .mat-column-Del{
+    background-color:   rgb(255, 118, 118);
+    height: 5px;
+    border-right: 1px solid currentColor;
+    padding-right: 5px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .btn{
+    border: 1.5px solid black;
+    width: 100%;
+    
+  }
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  .example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  img{
+    border: .5px;
+    border-radius: 6px;
+    height:50px;
+    width: 50px;
+  }
+  
+  
+  
+  

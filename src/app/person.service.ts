@@ -1,33 +1,15 @@
-import { Injectable, OnInit } from '@angular/core';
-
+import { Injectable } from '@angular/core';
 import persondata from'../assets/user.json';
-
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class PersonService implements OnInit{
-  // ngOnInit(): void {
-  //   this.getPerson();
-  // }
-  // constructor(){ }
-  // getPeople(): Observable<Person[]>{
-  //   const person = of(People);
-  //   return person;
-  // }
-  // getPerson(){
-  //   const per = this.person.find((person: any)=> person.id === person.id)!;
-  //   return per;
-  // }
+export class PersonService{
 
-  getPerson(){
-    return persondata.Person;
-  }
-
-  ngOnInit(): void {
-      this.getPerson();
-  }
-
+constructor(){}
+getPeople(){
+ console.log(persondata.Person)
+  return persondata.Person;
+ 
+}
 
 }

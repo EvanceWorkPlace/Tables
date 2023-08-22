@@ -28,6 +28,10 @@ img{
   border: 1px solid rgb(30, 189, 210);
   align-content: end;
   max-width: 100px;
+  margin-top: 10px;
   border-radius: 20px;
   margin-trim: 100px;
+}
+.example-spacer {
+  flex: 1 1 auto;
 }

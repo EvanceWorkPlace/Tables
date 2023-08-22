@@ -1,0 +1,91 @@
+<p>
+  <mat-toolbar color="warn">
+    <mat-toolbar-row>
+      <span>Table<mat-icon>favorite</mat-icon>App</span>   
+      <span class="example-spacer"></span>
+      <h1><img src="{{people[0].image}}" alt="image"></h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <span>Bad<mat-icon>favorite</mat-icon>Code</span>
+        <span class="example-spacer"></span>
+          <mat-icon>verified_user</mat-icon>
+       </mat-toolbar-row>
+    </mat-toolbar>
+</p>
+<mat-toolbar color="warn">
+  <mat-toolbar-row>
+    <span>
+      <p>{{people[0].name}} {{people[0].surname}} {{people[0].Email}} {{people[0].Email}}</p>
+    </span>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<table mat-table [dataSource]="people" class="mat-elevation-z8">
+  <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+    <div *cdkVirtualFor="let item of people" class="example-item">{{item}}</div>
+    <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td  mat-cell *matCellDef="let person; let i = index;" matTooltip="{{person.id}}">-{{person.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name. </th>
+            <td matTooltip="{{person.id}} {{person.name}} {{person.surname}}" mat-cell *matCellDef="let person; let i = index;"> <ng-container
+            *ngIf="!editMode || newPerson.id !== person.id"> {{people[i].name}}</ng-container>
+            <input *ngIf="editMode && newPerson.id === person.id" [(ngModel)]="newPerson.name" /></td>
+    </ng-container>
+    <ng-container matColumnDef="surname">
+            <th mat-header-cell *matHeaderCellDef> Surname. </th>
+            <td  mat-cell *matCellDef="let person; let i = index;"><ng-container *ngIf="!editMode || newPerson.id !== person.id">
+           {{people[i].surname}}</ng-container>
+            <input *ngIf="editMode && newPerson.id === person.id" [(ngModel)]="newPerson.surname" /></td>
+    </ng-container>
+    <ng-container matColumnDef="Email">
+            <th mat-header-cell *matHeaderCellDef> Email.</th>
+            <td  mat-cell *matCellDef="let person; let i = index;" matTooltip=" {{person.Email}}"> <ng-container
+            *ngIf="!editMode || newPerson.id !== person.id">{{people[i].Email}}</ng-container>
+            <input *ngIf="editMode && newPerson.id === person.id" [(ngModel)]="newPerson.Email" /></td>
+    </ng-container>
+    <ng-container matColumnDef="Age">
+            <th mat-header-cell *matHeaderCellDef>Age.</th>
+            <td  mat-cell *matCellDef="let person; let i = index;" matTooltip=" {{person.Age}}"> <ng-container
+            *ngIf="!editMode || newPerson.id !== person.id">{{people[i].Age}}</ng-container>
+            <input *ngIf="editMode && newPerson.id === person.id" [(ngModel)]="newPerson.Age" type="number" /></td>
+    </ng-container>
+    <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef>Profile.</th>
+            <td  mat-cell *matCellDef="let person; let i = index;"> <ng-container
+            ><img class="img" src="{{people[i].image}}"></ng-container></td>
+    </ng-container>
+    <ng-container matColumnDef="Del">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let person">
+          <button mat-button [matMenuTriggerFor]="vertebrates"
+          matTooltip="Edit,delete,save"><<mat-icon>edit</mat-icon></button>
+                  <mat-menu #animals="matMenu">
+                  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+                  </mat-menu>
+                  <mat-menu #vertebrates="matMenu">
+                  <button mat-menu-item><mat-icon>verified_user</mat-icon>Edit</button>
+                  <button mat-menu-item [matMenuTriggerFor]="fish" *ngIf="editMode"><mat-icon>delete</mat-icon></button>
+                  <button mat-menu-item *ngIf="editMode" (click)="editPerson(person)"><mat-icon>edit</mat-icon></button>
+                  </mat-menu>
+                  <mat-menu #fish="matMenu">
+                  <button mat-menu-item *ngIf="editMode && newPerson.id === person.id"
+                  (click)="cancelEdit()"><mat-icon>close</mat-icon></button>
+                  <button mat-menu-item *ngIf="editMode && newPerson.id === person.id"
+                  (click)="updatePerson()"><mat-icon>update</mat-icon></button>
+                  <button mat-menu-item (click)="onDelete(person.id)"><mat-icon>delete</mat-icon></button>
+                  </mat-menu></td>
+    </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </cdk-virtual-scroll-viewport>
+</table>
+                  <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+                  </mat-paginator>
+
+      <button class="btn btn-secondary" mat-fab extended color="warn" (click)="openAddUserDialog()">
+                  <mat-icon>favorite</mat-icon>
+                  newUser
+      </button>
