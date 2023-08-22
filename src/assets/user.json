@@ -5,7 +5,7 @@
          "surname": "Moloto",
          "Email": "Moloto@gmail.com",
          "Age": 19,
-         "image":"./assets/prof4.png"
+         "image":"./assets/prof3.png"
          },
          {
         "id": "2",
@@ -13,7 +13,7 @@
         "surname":"Smith",
         "Email": "Swambana@gmail.com",
         "Age": 21,
-        "image":"./assets/prof3.png"
+        "image":"./assets/prof4.png"
         },
         {
         "id": "4",

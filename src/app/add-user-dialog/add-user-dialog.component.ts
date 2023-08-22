@@ -5,9 +5,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalService } from '../modal.service';
 
 
-
-
-
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatDialog } from '@angular/material/dialog';
@@ -40,6 +37,7 @@ import { Person } from '../persons';
 })
 export class AddUserDialogComponent {
   dataSource!: MatTableDataSource<Person>;
+  newStudentForm: any;
   displayedColumns: string[] = ['id', 'name', 'surname', 'Email', 'Age', 'Del'];
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
@@ -50,17 +48,24 @@ export class AddUserDialogComponent {
   image = new FormControl('/assets/');
   constructor(private dialogRef: MatDialogRef<AddUserDialogComponent>,
   @Inject(MAT_DIALOG_DATA) public data: any ,  private formBuilder: FormBuilder,private modalService:ModalService){}
+ 
   onSubmit() {
+    // const newStudent: Person = {
+    //   id: null, // Assign an appropriate ID here
+    //   name: this.newStudentForm.controls['name'].value,
+    //   surname: this.newStudentForm.controls['surname'].value,
+    //   // Assign other form controls here...
+    // };
     // Push the new user to the users array
     //TODO: have a process of sending the data once component is closed
-    console.log(this.newUser)
+            console.log(this.newUser)
     //this.data.callback(this.newUser);
-    console.log("hit here " + JSON.stringify(this.people))
+            console.log("hit here " + JSON.stringify(this.people))
    // Emit the new user data
-   this.modalService.setAddedUserData(this.newUser);
+            this.modalService.setAddedUserData(this.newUser);
         // this.dialogRef.close({data: this.newUser} );
-        this.dialogRef.close();
-        this.modalService.hideModal();
+            this.dialogRef.close();
+            this.modalService.hideModal();
   }
   onCancel() {
         this.dialogRef.close();
@@ -72,4 +77,6 @@ export class AddUserDialogComponent {
         }
         return this.email.hasError('email') ? 'Not a valid email' : '';
   }
+  
 }
+

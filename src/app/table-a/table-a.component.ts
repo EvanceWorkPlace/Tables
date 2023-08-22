@@ -88,14 +88,11 @@ export class TableAComponent implements OnInit {
     console.log(result)
     
     // const index =this.person.id.length+1; 
-    if (result) {
-      this.addNewStudent(result);
-      
-     
+    if (result) { this.addNewStudent(result);
       // User clicked 'Add' in the dialog
-      callback:(newStudent:any)=>{
-        const newId = Math.max(...this.people.map(person => person.id)) + 1;
-        const newPerson = { ...newStudent, id: newId };
+      callback:(newStudent:any)=>{ 
+      const newId = Math.max(...this.people.map(person => person.id)) + 1;
+      const newPerson = { ...newStudent, id: newId };
       this.dataSource.data = this.people; 
       
       this.people.push(newStudent)
@@ -105,7 +102,8 @@ export class TableAComponent implements OnInit {
       this.numberOfUsersAdded++;
       }
      
-    } 
+     
+    }  
     console.log(this.people)
   });
 
@@ -113,7 +111,6 @@ export class TableAComponent implements OnInit {
 addNewStudent(newStudent: any) {
   // Add the new student to the existing data
   this.people.push(newStudent);
-
   // Update the table data source
   this.dataSource.data = this.people;
    this.displayedColumns = [...this.displayedColumns];

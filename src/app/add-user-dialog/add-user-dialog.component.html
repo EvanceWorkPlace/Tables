@@ -3,6 +3,7 @@
     <div class="example-container" >
         <div>
             <h2>Personal Info</h2>
+           
         </div>
            
         <br>
@@ -11,34 +12,38 @@
                 <input matInput #input1 maxlength="20" [(ngModel)]="newUser.name" placeholder="name"  name="name" required>
                 <mat-hint align="end">{{input1.value.length}}/20</mat-hint>
         </mat-form-field>   
-                <br>   
+                
         <mat-form-field hintLabel="Max 20 characters">
                 <mat-label>Enter your 2ndname</mat-label>
                 <input matInput #input2 maxlength="20" [(ngModel)]="newUser.surname" placeholder="surname"  name="surname" required>
                 <mat-hint align="end">{{input2.value.length}}/20</mat-hint>
         </mat-form-field>   
-                <br> 
+                 
         <mat-form-field>
                 <mat-label>Age</mat-label>
                 <input matInput type="number" min="1" [(ngModel)]="newUser.Age" name="Age">
         </mat-form-field> 
-                <br>
         <mat-form-field>
                 <mat-label>Enter your email</mat-label>
                 <input matInput placeholder="pat@example.com" [(ngModel)]="newUser.Email" [formControl]="email" required name="Age">
                 <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        
         </mat-form-field>
         <mat-form-field>
                 <mat-label>Enter your Image</mat-label>
-                <input matInput type="string"  [(ngModel)]="newUser.image" [formControl]="image" name="image" type="text" value="John">
+                <input matInput type="string"  [(ngModel)]="newUser.image" [formControl]="image" name="image" type="text" value="John">      
+                <div *ngIf="newUser.image">
+                    <img class="img" [src]="newUser.image">
+                  </div>
         </mat-form-field> 
+
                <br>
                     <button mat-fab extended color="primary" type="submit">
-                    <mat-icon>favorite</mat-icon>
+                    <mat-icon>verified_user</mat-icon>
             Submit
             </button>
             <button mat-fab extended color="accent" (click)="onCancel()">
-            <mat-icon>favorite</mat-icon>
+            <mat-icon>cancel</mat-icon>
                 cancel
               </button>
               

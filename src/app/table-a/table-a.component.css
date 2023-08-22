@@ -10,9 +10,7 @@
     background-color: #000000;
   }
    .mat-elevation-z8 {
-    
-   
-    background: rgb(0, 73, 36);
+    background: rgb(255, 134, 78);
    }
   .demo-table .mat-elevation-z8 {
    
@@ -23,7 +21,7 @@
   
   .mat-column-id{
     background-color: black;
-    color: #0011ff;
+    color: #ff0000;
     width: 32px;
     border-right: 1px solid currentColor;
     padding-right: 24px;
@@ -32,14 +30,14 @@
   }
   .mat-column-name{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 255, 255);
     color: #000000;
     border-right: 1px solid currentColor;
     padding-right: 24px;
     text-align: center;
   }
   .mat-column-surname{
-    background-color:  rgb(253, 32, 32);
+    background-color:  rgb(211, 211, 211);
     color: #000000;
     border-right: 1px solid currentColor;
     padding-right: 24px;
@@ -47,7 +45,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   .mat-column-Email{
-    background-color:rgb(252, 61, 61);
+    background-color:rgb(180, 180, 180);
     
     color: #000000;
    
@@ -57,7 +55,7 @@
     text-align: center;
   }
   .mat-column-Age{
-    background-color: rgb(255, 88, 88);
+    background-color:rgb(163, 163, 163);
     color: #000000;
     
     border-right: 1px solid currentColor;
@@ -66,7 +64,7 @@
     text-align: center;
   }
   .mat-column-Del{
-    background-color:   rgb(255, 118, 118);
+    background-color:   rgb(148, 148, 148);
     height: 5px;
     border-right: 1px solid currentColor;
     padding-right: 5px;
@@ -119,7 +117,7 @@
     border: .5px;
     border-radius: 6px;
     height:50px;
-    width: 50px;
+    width: 60px;
   }
   
   

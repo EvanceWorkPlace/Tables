@@ -60,23 +60,50 @@
     <ng-container matColumnDef="Del">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let person">
-          <button mat-button [matMenuTriggerFor]="vertebrates"
-          matTooltip="Edit,delete,save"><<mat-icon>edit</mat-icon></button>
+              <button mat-button [matMenuTriggerFor]="vertebrates"
+                   matTooltip="Edit,delete,save"><<mat-icon>edit</mat-icon></button>
                   <mat-menu #animals="matMenu">
-                  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+              <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
                   </mat-menu>
-                  <mat-menu #vertebrates="matMenu">
-                  <button mat-menu-item><mat-icon>verified_user</mat-icon>Edit</button>
-                  <button mat-menu-item [matMenuTriggerFor]="fish" *ngIf="editMode"><mat-icon>delete</mat-icon></button>
-                  <button mat-menu-item *ngIf="editMode" (click)="editPerson(person)"><mat-icon>edit</mat-icon></button>
+
+
+              <!-- <mat-menu #vertebrates="matMenu">
+              <button mat-menu-item><mat-icon>verified_user</mat-icon>Edit</button>
+              <button mat-menu-item [matMenuTriggerFor]="fish" *ngIf="editMode"><mat-icon>delete</mat-icon></button>
+              <button mat-menu-item *ngIf="editMode" (click)="editPerson(person)"><mat-icon>edit</mat-icon></button>
                   </mat-menu>
                   <mat-menu #fish="matMenu">
-                  <button mat-menu-item *ngIf="editMode && newPerson.id === person.id"
+              <button mat-menu-item *ngIf="editMode && newPerson.id === person.id"
                   (click)="cancelEdit()"><mat-icon>close</mat-icon></button>
-                  <button mat-menu-item *ngIf="editMode && newPerson.id === person.id"
+              <button mat-menu-item *ngIf="editMode && newPerson.id === person.id"
                   (click)="updatePerson()"><mat-icon>update</mat-icon></button>
-                  <button mat-menu-item (click)="onDelete(person.id)"><mat-icon>delete</mat-icon></button>
-                  </mat-menu></td>
+              <button mat-menu-item (click)="onDelete(person.id)"><mat-icon>delete</mat-icon></button>
+                  </mat-menu>
+                  <button mat-button [matMenuTriggerFor]="vertebrates" matTooltip="Edit, delete, save">
+                    <mat-icon>edit</mat-icon>
+                  </button> -->
+                  
+
+
+
+                  
+                  <mat-menu #vertebrates="matMenu">
+                    <button mat-menu-item *ngIf="editMode" (click)="editPerson(person)">
+                      <mat-icon>edit</mat-icon>Edit
+                    </button>
+                    <button mat-menu-item *ngIf="editMode && newPerson.id === person.id" (click)="cancelEdit()">
+                      <mat-icon>close</mat-icon>Cancel
+                    </button>
+                    <button mat-menu-item *ngIf="editMode && newPerson.id === person.id" (click)="updatePerson()">
+                      <mat-icon>update</mat-icon>Update
+                    </button>
+                    <button mat-menu-item (click)="onDelete(person.id)">
+                      <mat-icon>delete</mat-icon>Delete
+                    </button>
+                  </mat-menu>
+                  
+                
+                </td>
     </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -85,7 +112,7 @@
                   <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
                   </mat-paginator>
 
-      <button class="btn btn-secondary" mat-fab extended color="warn" (click)="openAddUserDialog()">
-                  <mat-icon>favorite</mat-icon>
-                  newUser
-      </button>
+              <button class="btn btn-secondary" mat-fab extended color="warn" (click)="openAddUserDialog()">
+                            <mat-icon>cancel</mat-icon>
+                             newUser
+              </button>
