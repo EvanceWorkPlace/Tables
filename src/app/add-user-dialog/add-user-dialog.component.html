@@ -9,8 +9,9 @@
         <br>
         <mat-form-field hintLabel="Max 20 characters">
                 <mat-label>Enter your 1stname</mat-label>
-                <input matInput #input1 maxlength="20" [(ngModel)]="newUser.name" placeholder="name"  name="name" required>
-                <mat-hint align="end">{{input1.value.length}}/20</mat-hint>
+                <input matInput #input1 [(ngModel)]="newUser.name" [formControl]="name" placeholder="name"  name="name" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessageN()}}</mat-error>
+                
         </mat-form-field>   
                 
         <mat-form-field hintLabel="Max 20 characters">
@@ -38,14 +39,11 @@
         </mat-form-field> 
 
                <br>
-                    <button mat-fab extended color="primary" type="submit">
+                <button mat-button color="primary" [disabled]="!userForm.valid" type="submit">Submit
                     <mat-icon>verified_user</mat-icon>
-            Submit
+           
             </button>
-            <button mat-fab extended color="accent" (click)="onCancel()">
-            <mat-icon>cancel</mat-icon>
-                cancel
-              </button>
+          
               
             
              

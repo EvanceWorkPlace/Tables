@@ -77,7 +77,7 @@ export class TableAComponent implements OnInit {
   
   const dialogRef = this.dialog.open(AddUserDialogComponent, {
     width: '400px',
-    height:'600px',
+    height:'500px',
     enterAnimationDuration: '1000ms',
     exitAnimationDuration: '1000ms',
     // Adjust the width as needed

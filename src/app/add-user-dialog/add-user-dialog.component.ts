@@ -45,9 +45,17 @@ export class AddUserDialogComponent {
   people: PersonService[] = [];
   newUser: any = {};
   email = new FormControl('', [Validators.required, Validators.email]);
+  name = new FormControl('', [Validators.required, Validators.email]);
   image = new FormControl('/assets/');
+  userForm: FormGroup;
+  
   constructor(private dialogRef: MatDialogRef<AddUserDialogComponent>,
-  @Inject(MAT_DIALOG_DATA) public data: any ,  private formBuilder: FormBuilder,private modalService:ModalService){}
+  @Inject(MAT_DIALOG_DATA) public data: any ,  private formBuilder: FormBuilder,private modalService:ModalService){
+    this.userForm = this.formBuilder.group({
+      name: new FormControl('', [Validators.required]),
+      Email: ['', [Validators.required, Validators.email]],
+    });
+  }
  
   onSubmit() {
     // const newStudent: Person = {
@@ -58,18 +66,23 @@ export class AddUserDialogComponent {
     // };
     // Push the new user to the users array
     //TODO: have a process of sending the data once component is closed
-            console.log(this.newUser)
+            // console.log(this.newUser)
     //this.data.callback(this.newUser);
-            console.log("hit here " + JSON.stringify(this.people))
+            // console.log("hit here " + JSON.stringify(this.people))
    // Emit the new user data
-            this.modalService.setAddedUserData(this.newUser);
+           
         // this.dialogRef.close({data: this.newUser} );
-            this.dialogRef.close();
-            this.modalService.hideModal();
+                this.modalService.setAddedUserData(this.newUser);
+                this.dialogRef.close(this.userForm.value);
+                this.dialogRef.close();
+          
+
   }
-  onCancel() {
-        this.dialogRef.close();
-        this.modalService.hideModal();
+  getErrorMessageN(){
+    if (this.name.hasError('required')) {
+      return 'You must enter a value';
+      }
+      return this.name.hasError('name') ? 'Not a valid name' : '';
   }
   getErrorMessage() {
         if (this.email.hasError('required')) {
