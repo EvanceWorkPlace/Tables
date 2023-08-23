@@ -7,17 +7,17 @@
         </div>
            
         <br>
-        <mat-form-field hintLabel="Max 20 characters">
+        <mat-form-field >
                 <mat-label>Enter your 1stname</mat-label>
                 <input matInput #input1 [(ngModel)]="newUser.name" [formControl]="name" placeholder="name"  name="name" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessageN()}}</mat-error>
+                <mat-error *ngIf="name.invalid">{{getErrorMessageS()}}</mat-error>
                 
         </mat-form-field>   
                 
-        <mat-form-field hintLabel="Max 20 characters">
+        <mat-form-field >
                 <mat-label>Enter your 2ndname</mat-label>
-                <input matInput #input2 maxlength="20" [(ngModel)]="newUser.surname" placeholder="surname"  name="surname" required>
-                <mat-hint align="end">{{input2.value.length}}/20</mat-hint>
+                <input matInput #input2 [(ngModel)]="newUser.surname" placeholder="surname"  name="surname" required>
+                <mat-error *ngIf="surname.invalid">{{getErrorMessageN()}}</mat-error>
         </mat-form-field>   
                  
         <mat-form-field>

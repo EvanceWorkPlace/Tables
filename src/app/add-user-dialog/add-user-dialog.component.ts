@@ -45,13 +45,15 @@ export class AddUserDialogComponent {
   people: PersonService[] = [];
   newUser: any = {};
   email = new FormControl('', [Validators.required, Validators.email]);
-  name = new FormControl('', [Validators.required, Validators.email]);
+  name = new FormControl('', [Validators.required]);
+  surname = new FormControl('', [Validators.required]);
   image = new FormControl('/assets/');
   userForm: FormGroup;
   
   constructor(private dialogRef: MatDialogRef<AddUserDialogComponent>,
   @Inject(MAT_DIALOG_DATA) public data: any ,  private formBuilder: FormBuilder,private modalService:ModalService){
     this.userForm = this.formBuilder.group({
+      surname: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required]),
       Email: ['', [Validators.required, Validators.email]],
     });
@@ -78,11 +80,17 @@ export class AddUserDialogComponent {
           
 
   }
-  getErrorMessageN(){
+  getErrorMessageS(){
     if (this.name.hasError('required')) {
-      return 'You must enter a value';
+      return 'You must enter a name';
       }
       return this.name.hasError('name') ? 'Not a valid name' : '';
+  }
+  getErrorMessageN(){
+    if (this.surname.hasError('required')) {
+      return 'You must enter a surname';
+      }
+      return this.surname.hasError('surname') ? 'Not a valid surname' : '';
   }
   getErrorMessage() {
         if (this.email.hasError('required')) {
