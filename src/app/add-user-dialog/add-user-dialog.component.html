@@ -31,7 +31,7 @@
         </mat-form-field>
         <mat-form-field>
                 <mat-label>Enter your Image</mat-label>
-                <input matInput type="string"  [(ngModel)]="newUser.image" [formControl]="image" name="image" type="text" value="John">      
+                <input matInput type="string"  [(ngModel)]="newUser.image" [formControl]="image" name="image" textarea="/assets/" type="text" value="John">      
                 <div *ngIf="newUser.image">
                     <img class="img" [src]="newUser.image">
                   </div>

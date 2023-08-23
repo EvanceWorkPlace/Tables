@@ -88,13 +88,13 @@
 
                   
                   <mat-menu #vertebrates="matMenu">
-                    <button mat-menu-item *ngIf="editMode" (click)="editPerson(person)">
+                    <button mat-menu-item *ngIf="!editMode" (click)="editPerson(person)">
                       <mat-icon>edit</mat-icon>Edit
                     </button>
-                    <button mat-menu-item *ngIf="editMode && newPerson.id === person.id" (click)="cancelEdit()">
+                    <button mat-menu-item *ngIf="editMode && person.id === person.id" (click)="cancelEdit()">
                       <mat-icon>close</mat-icon>Cancel
                     </button>
-                    <button mat-menu-item *ngIf="editMode && newPerson.id === person.id" (click)="updatePerson()">
+                    <button mat-menu-item *ngIf="editMode && person.id === person.id" (click)="updatePerson()">
                       <mat-icon>update</mat-icon>Update
                     </button>
                     <button mat-menu-item (click)="onDelete(person.id)">
@@ -109,7 +109,7 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </cdk-virtual-scroll-viewport>
 </table>
-                  <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+                  <mat-paginator [length]="50" [pageSize]="5" [pageSizeOptions]="[5, 10]" aria-label="Select page">
                   </mat-paginator>
 
               <button class="btn btn-secondary" mat-fab extended color="warn" (click)="openAddUserDialog()">

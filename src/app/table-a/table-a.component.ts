@@ -54,10 +54,10 @@ export class TableAComponent implements OnInit {
       this.numberOfUsersAdded++;
     }
   });
-  this.people = this.personService.getPeople()
- this.editMode = true;
- this.newPerson = {}; 
- this.dataSource.paginator = this.paginator;
+                  this.people = this.personService.getPeople()
+                  this.editMode = false;
+                  this.newPerson = {}; 
+                  this.dataSource.paginator = this.paginator;
 
  }
  loadData(){
@@ -87,22 +87,27 @@ export class TableAComponent implements OnInit {
 
     console.log(result)
     
-    // const index =this.person.id.length+1; 
+    const index =this.person.id.length+1; 
     if (result) { this.addNewStudent(result);
       // User clicked 'Add' in the dialog
+      // callback:(newStudent:any)=>{ 
+      // const newId = Math.max(...this.people.map(person => person.id)) + 1;
+      // const newPerson = { ...newStudent, id: newId };
+      // this.dataSource.data = this.people; 
+      // this.people.push(newStudent)
+      // this.people.unshift(newPerson);
+      // const newColumn = `newColumn${this.numberOfUsersAdded + 1}`;
+      // this.displayedColumns.push(newColumn);
+      // this.numberOfUsersAdded++;
+      // }
       callback:(newStudent:any)=>{ 
-      const newId = Math.max(...this.people.map(person => person.id)) + 1;
-      const newPerson = { ...newStudent, id: newId };
-      this.dataSource.data = this.people; 
-      
-      this.people.push(newStudent)
-      this.people.unshift(newPerson);
-      const newColumn = `newColumn${this.numberOfUsersAdded + 1}`;
+      const newColumn = `newColumn${this.numberOfUsersAdded + 10}`;
       this.displayedColumns.push(newColumn);
-      this.numberOfUsersAdded++;
-      }
-     
-     
+      this.numberOfUsersAdded++;} 
+
+      const newId = Math.max(...this.people.map(person => person.id)) + index;
+      const person = { ...this.newPerson, id: newId };
+      this.people.unshift(person);   
     }  
     console.log(this.people)
   });
@@ -110,10 +115,10 @@ export class TableAComponent implements OnInit {
  }
 addNewStudent(newStudent: any) {
   // Add the new student to the existing data
-  this.people.push(newStudent);
+      this.people.push(newStudent);
   // Update the table data source
-  this.dataSource.data = this.people;
-   this.displayedColumns = [...this.displayedColumns];
+      this.dataSource.data = this.people;
+      this.displayedColumns = [...this.displayedColumns];
 }
 toggleAddForm(){
   this.isAddFormVisible = !this.isAddFormVisible;

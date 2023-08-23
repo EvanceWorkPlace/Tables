@@ -1,14 +1,14 @@
 { 
          "Person":[{
-         "id": "1",
+         "id": "0",
          "name": "Gift",
          "surname": "Moloto",
          "Email": "Moloto@gmail.com",
          "Age": 19,
-         "image":"./assets/prof3.png"
+         "image":"./assets/prof1.jpg"
          },
          {
-        "id": "2",
+        "id": "1",
         "name": "Dakalo",
         "surname":"Smith",
         "Email": "Swambana@gmail.com",
@@ -16,23 +16,44 @@
         "image":"./assets/prof4.png"
         },
         {
-        "id": "4",
+        "id": "2",
         "name": "Alex",
         "surname": "Thomas",
         "Email": "Masuku@gmail.com",
         "Age": 45,
-        "image":"./assets/prof2.png"
+        "image":"./assets/prof3.png"
         },
         {
-        "id": "5",
+        "id": "3",
         "name": "David",
         "surname": "Wayne",
         "Email": "Skosana@gmail.com",
         "Age": 29,
-        "image":"./assets/prof1.jpg" 
-        }
+        "image":"./assets/prof2.png" 
+        },{
+            "id": "4",
+            "name": "william",
+            "surname": "Dwayne",
+            "Email": "Dwayne@gmail.com",
+            "Age": 39,
+            "image":"./assets/prof3.png" 
+            }
+            ,{
+                "id": "5",
+                "name": "Mike",
+                "surname": "Andwau",
+                "Email": "Andwau@gmail.com",
+                "Age": 39,
+                "image":"./assets/prof4.png" 
+                }
 
-        
-        
+                ,{
+                    "id": "6",
+                    "name": "Spho",
+                    "surname": "Mtsweni",
+                    "Email": "Mtsweni@gmail.com",
+                    "Age": 19,
+                    "image":"./assets/prof1.jpg" 
+                }
     ]
 }
